@@ -7,13 +7,7 @@ import org.apache.pdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceCharacteristicsDictionary;
-import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
-import org.apache.pdfbox.pdmodel.interactive.form.PDTextField;
 import org.apache.pdfbox.util.Matrix;
 
 import java.io.File;
@@ -22,18 +16,18 @@ import java.io.IOException;
 public class ExportToPDF {
     private PDDocument document = new PDDocument();
     private PDPage page = new PDPage(PDRectangle.A4);
-    private PDResources resources = new PDResources();
+//    private PDResources resources = new PDResources();
 
     private PDFont font = PDType1Font.HELVETICA;
     private float fontSize = 12.0f;
 
-    public void createDocument(String message){
+    public void createCertificat(String date, String name){
         try {
             File pdfDocument = new File("certificat.pdf");
 
-            //landscapeMode();
-            //addBackgroundImage("img/fond-certificat.jpg");
-            addFiled();
+            landscapeMode();
+            addBackgroundImage("img/fond-certificat.jpg");
+            addText(date, name);
 
             document.addPage(page);
             document.save(pdfDocument);
@@ -102,37 +96,28 @@ public class ExportToPDF {
         }
     }
 
-    private void addFiled(){
-        resources.put(COSName.getPDFName("Helv"), font);
-
-        PDAcroForm acroForm = new PDAcroForm(document);
-        document.getDocumentCatalog().setAcroForm(acroForm);
-        acroForm.setDefaultResources(resources);
-
-        PDTextField textBox = new PDTextField(acroForm);
-        textBox.setPartialName("SampleField");
-        String defaultAppearanceString = "/Helv 12 Tf 0 g";
-        textBox.setDefaultAppearance(defaultAppearanceString);
-        acroForm.getFields().add(textBox);
-
-        PDAnnotationWidget widget = textBox.getWidgets().get(0);
-        //Point d'origine : coin inférieur gauche
-        PDRectangle rect = new PDRectangle(50, 20, 200, 25);
-        widget.setRectangle(rect);
-        widget.setPage(page);
-
-        widget.setPrinted(true);
-
-
+    private void addText(String date, String name){
+        PDPageContentStream contents = null;
 
         try {
-
-            page.getAnnotations().add(widget);
-            textBox.setValue("Sample field");
-
-
+            contents = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true);
+            contents.beginText();
+            contents.setFont(font, fontSize);
+            contents.newLineAtOffset(190, 150);
+            contents.showText(date);
+            contents.newLineAtOffset(390, 0);
+            contents.showText(name);
+            contents.newLineAtOffset(-340, 120);
+            contents.showText("Tunis as passed this test !");
+            contents.endText();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                contents.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
