@@ -1,0 +1,137 @@
+%PDF-1.4
+%цдья
+1 0 obj
+<<
+/Type /Catalog
+/Version /1.4
+/Pages 2 0 R
+/AcroForm 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Fields [5 0 R]
+/DR 6 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/MediaBox [0.0 0.0 595.27563 841.8898]
+/Annots [5 0 R]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/FT /Tx
+/T (SampleField)
+/DA (/Helv 12 Tf 0 g)
+/Type /Annot
+/Subtype /Widget
+/Rect [50.0 20.0 250.0 45.0]
+/P 4 0 R
+/MK 7 0 R
+/F 4
+/V (Sample field)
+/AP 8 0 R
+>>
+endobj
+6 0 obj
+<<
+/Font 9 0 R
+>>
+endobj
+7 0 obj
+<<
+/BG [1.0 1.0 0.0]
+>>
+endobj
+8 0 obj
+<<
+/N 10 0 R
+>>
+endobj
+9 0 obj
+<<
+/Helv 11 0 R
+>>
+endobj
+10 0 obj
+<<
+/Type /XObject
+/Subtype /Form
+/BBox [0.0 0.0 200.0 25.0]
+/Matrix [1.0 0.0 0.0 1.0 0.0 0.0]
+/FormType 1
+/Length 122
+/Resources <<
+/Font 12 0 R
+>>
+>>
+stream
+/DeviceRGB cs
+1 1 0 sc
+0 0 200 25 re
+f
+/Tx BMC
+
+q
+1 1 198 23 re
+W
+n
+BT
+/Helv 12 Tf
+2 8.192 Td
+(Sample field) Tj
+ET
+Q
+EMC
+
+
+endstream
+endobj
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+12 0 obj
+<<
+/Helv 11 0 R
+>>
+endobj
+xref
+0 13
+0000000000 65535 f
+0000000015 00000 n
+0000000094 00000 n
+0000000151 00000 n
+0000000198 00000 n
+0000000300 00000 n
+0000000479 00000 n
+0000000512 00000 n
+0000000551 00000 n
+0000000582 00000 n
+0000000616 00000 n
+0000000925 00000 n
+0000001023 00000 n
+trailer
+<<
+/Root 1 0 R
+/ID [<2F960AA11B5B965CF11C9DEAB9F37427> <2F960AA11B5B965CF11C9DEAB9F37427>]
+/Size 13
+>>
+startxref
+1058
+%%EOF
